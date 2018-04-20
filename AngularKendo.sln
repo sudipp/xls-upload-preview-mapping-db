@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularKendo.UI", "UI\AngularKendo.UI.csproj", "{FAEF50E9-5A35-4C5B-AB79-AB6BBC7A2BA4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Dev|Any CPU = Dev|Any CPU
+		Prod|Any CPU = Prod|Any CPU
+		QA|Any CPU = QA|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Test|Any CPU = Test|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAEF50E9-5A35-4C5B-AB79-AB6BBC7A2BA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAEF50E9-5A35-4C5B-AB79-AB6BBC7A2BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAEF50E9-5A35-4C5B-AB79-AB6BBC7A2BA4}.Dev|Any CPU.ActiveCfg = Dev|Any CPU
+		{FAEF50E9-5A35-4C5B-AB79-AB6BBC7A2BA4}.Dev|Any CPU.Build.0 = Dev|Any CPU
+		{FAEF50E9-5A35-4C5B-AB79-AB6BBC7A2BA4}.Prod|Any CPU.ActiveCfg = Prod|Any CPU
+		{FAEF50E9-5A35-4C5B-AB79-AB6BBC7A2BA4}.Prod|Any CPU.Build.0 = Prod|Any CPU
+		{FAEF50E9-5A35-4C5B-AB79-AB6BBC7A2BA4}.QA|Any CPU.ActiveCfg = QA|Any CPU
+		{FAEF50E9-5A35-4C5B-AB79-AB6BBC7A2BA4}.QA|Any CPU.Build.0 = QA|Any CPU
+		{FAEF50E9-5A35-4C5B-AB79-AB6BBC7A2BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAEF50E9-5A35-4C5B-AB79-AB6BBC7A2BA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAEF50E9-5A35-4C5B-AB79-AB6BBC7A2BA4}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{FAEF50E9-5A35-4C5B-AB79-AB6BBC7A2BA4}.Test|Any CPU.Build.0 = Test|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = ..\..\..\ahm_sei_common_dev\SourceCode\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;m_parts_common_dev\SourceCode\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;m_parts_common_dev\SourceCode\packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45
+		EnterpriseLibraryConfigurationToolBinariesPath = ..\..\..\ahm_sei_common_dev\SourceCode\packages\Unity.Interception.2.1.505.2\lib\NET35;..\..\..\ahm_sei_common_dev\SourceCode\packages\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+EndGlobal

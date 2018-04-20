@@ -1,0 +1,57 @@
+﻿@model dynamic
+@using System.Xml
+@{
+    ViewBag.Title = "System Error";
+
+    int errorCode = Model.Exception.GetHttpCode();
+    bool isAppError = (Model is HandleErrorInfo) ? false : Model.IsAppError;
+
+    const string defaultErrorMessage = "An error occurred while processing your request.";
+
+    var webConfigPath = Path.GetDirectoryName(System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration("/").FilePath);
+    var configurationFileAndPath = Path.Combine(webConfigPath, "Config\\httpErrorMessage.xml");
+    var xmldoc = new XmlDocument();
+    xmldoc.Load(configurationFileAndPath);
+
+    //find the custom message defined
+    XmlNode httpErrorNode = xmldoc.SelectSingleNode("/httperrors/error[@Code='" + errorCode + "']");
+    string techErrorMsg = (httpErrorNode != null) ? httpErrorNode.Attributes["Message"].Value : defaultErrorMessage;
+
+    string bizErrorMsg = Model.Exception.Message;
+}
+
+@if (!isAppError)
+{
+    <p>
+        <h2>
+            @techErrorMsg
+        </h2>
+        <div style="color:red">@bizErrorMsg</div>
+        <div>Please contact technical support</div>
+    </p>
+}
+else
+{
+    <html lang="en" ng-app="spApp">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - LAC Campaign</title>
+        @RenderPage(@"~/Views/Shared/include.cshtml", false)
+    </head>
+    <body>
+        @RenderPage(@"~/Views/Shared/header.cshtml")
+        <div class="container-fluid body-content">
+            <p>
+                <h2>
+                    @techErrorMsg
+                </h2>
+                <div style="color:red">@bizErrorMsg</div>
+                <div>Please contact technical support</div>
+            </p>
+        </div>
+        @RenderPage(@"~/Views/Shared/include.cshtml", true)
+    </body>
+</html>
+}

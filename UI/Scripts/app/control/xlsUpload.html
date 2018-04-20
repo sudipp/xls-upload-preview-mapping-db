@@ -1,0 +1,134 @@
+﻿<style>
+    .list-item {
+        list-style-type: none;
+        width: 200px;
+        margin: 5px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #222222;
+        color: #ffffff;
+        border-radius: 3px;
+        cursor: move;
+    }
+
+    #placeholder.list-item {
+        background-color: #ffffff;
+        color: #777;
+    }
+
+    .loading {
+        background-image: url('../Content/app/images/loading.gif');
+        height: 30px;
+        width: 140px;
+        background-position: -130px -186px;
+        background-repeat: no-repeat;
+        border: 0px solid black;
+    }
+
+    .form-control {
+        height: 35px;
+    }
+
+    #xlsColList, #dbColList, .dbColumns {
+        width: 200px;
+        height: 250px;
+        float: left;
+        margin-right: 30px;
+        border: 2px solid black;
+        border-radius: 3px;
+        overflow: scroll;
+    }
+
+    .item {
+        margin: 5px;
+        padding: 5px;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #1C373E;
+        color: white;
+    }
+
+
+    #dbColListContainer {
+        overflow: scroll;
+        height: 250px;
+        border: 2px solid black;
+    }
+
+    .dbitemcontainer {
+        /*width: 250px;*/
+        margin: 0;
+        float: left;
+        padding: 0;
+        border: 0px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .dbitem {
+        width: 150px;
+        min-height: 40px;
+        float: right;
+        margin: 5px;
+        padding: 5px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        background-color: transparent;
+    }
+
+    .dbitemdesc {
+        font-weight: bold;
+        float: left;
+        /*width: 150px;*/
+        overflow: initial;
+        margin: 5px;
+        padding: 5px;
+        border: 0 solid #ccc;
+        border-radius: 5px;
+        background-color: transparent;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12" ng-hide="$root.startup.isAnyJobPendingCommitOrRollback">
+            <h1>{{pageTitle}}</h1>
+            <input type="file" name="file" class="form-control"
+                   onchange="angular.element(this).scope().loadFile(this.files)" />
+            <div id="loading" class="loading"> </div>
+            <progress style="display: none;" value="{{progress}}"></progress>
+            <p ng-bind="msg"></p>
+        </div>
+    </div>
+
+    <div class="row" id="divGrd" style="overflow: hidden; display: none;">
+        <div class="col-md-12">
+            <div id="grd" style="overflow: hidden; height: 350px;"></div>
+        </div>
+    </div>
+
+
+    <div id="xlsDBMapperDiv" class="row" style="overflow: hidden; display: none;">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-3">
+                    <h1>XLS Columns</h1>
+                    <div id="xlsColList"></div>
+                </div>
+                <div class="col-md-9">
+                    <h1 style="display: inline-block;">Database Columns</h1>&nbsp;&nbsp;(<span class="errorMessage">*</span>) marked are mandatory fields
+                    <div kendo-tooltip="eqgRecordPreviewTooltip" k-options="eqgRecordPreviewTooltipDisplayOptions" style="color: black !important;">
+                        <div id="dbColListContainer"></div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="k-button" id="btnUpload" title="Upload" ng-click="UploadFile($event)" ladda-button="laddaLoading" data-spinner-color="#696969">Upload</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

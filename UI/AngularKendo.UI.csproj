@@ -1,0 +1,680 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FAEF50E9-5A35-4C5B-AB79-AB6BBC7A2BA4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AngularKendo.UI</RootNamespace>
+    <AssemblyName>AngularKendo.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="UiConstants.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\httpErrorMessage.xml" />
+    <Content Include="Content\app\images\Additional_Info_Menu_icon.png" />
+    <Content Include="Content\app\images\AHM_Confidential.png" />
+    <Content Include="Content\app\images\Archive.png" />
+    <Content Include="Content\app\images\Archive2.png" />
+    <Content Include="Content\app\images\Archive4.png" />
+    <Content Include="Content\app\images\Archive5.png" />
+    <Content Include="Content\app\images\Archive6.png" />
+    <Content Include="Content\app\images\Ascending.png" />
+    <Content Include="Content\app\images\Audio.png" />
+    <Content Include="Content\app\images\bmp.png" />
+    <Content Include="Content\app\images\Bulk_Upload_Menu_Icon.png" />
+    <Content Include="Content\app\images\Collapsed.png" />
+    <Content Include="Content\app\images\Compare_Shortlist_Empty_Menu_Icon.png" />
+    <Content Include="Content\app\images\Compare_Shortlist_Filled_Menu_Icon.png" />
+    <Content Include="Content\app\images\Configurations_Menu_Icon.png" />
+    <Content Include="Content\app\images\Create_Quote_Menu_Icon.png" />
+    <Content Include="Content\app\images\Create_RFQ_Menu_Icon.png" />
+    <Content Include="Content\app\images\csv.png" />
+    <Content Include="Content\app\images\Dashboard_Menu_Icon.png" />
+    <Content Include="Content\app\images\Descending.png" />
+    <Content Include="Content\app\images\doc.png" />
+    <Content Include="Content\app\images\docx.png" />
+    <Content Include="Content\app\images\equoteKendo.png" />
+    <Content Include="Content\app\images\equote_menu_spirite.png" />
+    <Content Include="Content\app\images\equote_sprite.png" />
+    <Content Include="Content\app\images\excel.png" />
+    <Content Include="Content\app\images\Expanded.png" />
+    <Content Include="Content\app\images\FileUpload.jpg" />
+    <Content Include="Content\app\images\folder16.ico" />
+    <Content Include="Content\app\images\folder32.ico" />
+    <Content Include="Content\app\images\gif.png" />
+    <Content Include="Content\app\images\global-equote-logo.png" />
+    <Content Include="Content\app\images\global-header-bg.png" />
+    <Content Include="Content\app\images\global-home.png" />
+    <Content Include="Content\app\images\global-honda-logo.png" />
+    <Content Include="Content\app\images\global-serviceparts-logo.png" />
+    <Content Include="Content\app\images\global-user.png" />
+    <Content Include="Content\app\images\grid-controls-delete.png" />
+    <Content Include="Content\app\images\grid-export-to-excel-selected.png" />
+    <Content Include="Content\app\images\grid-export-to-excel.png" />
+    <Content Include="Content\app\images\Helper_WQ_Menu_Icon.png" />
+    <Content Include="Content\app\images\Honda Header S.png" />
+    <Content Include="Content\app\images\HondaHeaderA.png" />
+    <Content Include="Content\app\images\HondaHeaderB.png" />
+    <Content Include="Content\app\images\HondaRptHeader.png" />
+    <Content Include="Content\app\images\Hopstarter-Sleek-Xp-Basic-Preview.ico" />
+    <Content Include="Content\app\images\icon-search-active.png" />
+    <Content Include="Content\app\images\icon-search.png" />
+    <Content Include="Content\app\images\imgUpload.pngscale30 %28003%29.png" />
+    <Content Include="Content\app\images\imgUpload.pngscale40 %28003%29.png" />
+    <Content Include="Content\app\images\imgUpload.pngscale50.png" />
+    <Content Include="Content\app\images\Information.png" />
+    <Content Include="Content\app\images\ISD.png" />
+    <Content Include="Content\app\images\jpeg.png" />
+    <Content Include="Content\app\images\jpg.png" />
+    <Content Include="Content\app\images\LAC Campaign.png" />
+    <Content Include="Content\app\images\LAC Campaign1 %28002%29.png" />
+    <Content Include="Content\app\images\LAC Campaign1.png" />
+    <Content Include="Content\app\images\LACCampaign.png" />
+    <Content Include="Content\app\images\loading.gif" />
+    <Content Include="Content\app\images\Menu icons Treasure.png" />
+    <Content Include="Content\app\images\mp-partlookup.png" />
+    <Content Include="Content\app\images\Part_Lookup_Menu_Icon.png" />
+    <Content Include="Content\app\images\pdf.png" />
+    <Content Include="Content\app\images\pic.png" />
+    <Content Include="Content\app\images\Pkg_WQ_Menu_Icon.png" />
+    <Content Include="Content\app\images\png.png" />
+    <Content Include="Content\app\images\ppt.png" />
+    <Content Include="Content\app\images\pptx.png" />
+    <Content Include="Content\app\images\preview16.ico" />
+    <Content Include="Content\app\images\preview32.ico" />
+    <Content Include="Content\app\images\QA_WQ_Menu_Icon.png" />
+    <Content Include="Content\app\images\RFQ_WQ_Menu_Icon.png" />
+    <Content Include="Content\app\images\Supplier_Confidential.png" />
+    <Content Include="Content\app\images\Supplier_WQ.png" />
+    <Content Include="Content\app\images\svg.png" />
+    <Content Include="Content\app\images\Tool_Master_Menu_Icon.png" />
+    <Content Include="Content\app\images\transparent.gif" />
+    <Content Include="Content\app\images\txt.png" />
+    <Content Include="Content\app\images\up16.ico" />
+    <Content Include="Content\app\images\up32.ico" />
+    <Content Include="Content\app\images\vsd.png" />
+    <Content Include="Content\app\images\xlsx.png" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\kendo.custom.css" />
+    <Content Include="Content\kendo\2015.3.1111\Bootstrap\editor.png" />
+    <Content Include="Content\kendo\2015.3.1111\Bootstrap\imagebrowser.png" />
+    <Content Include="Content\kendo\2015.3.1111\Bootstrap\indeterminate.gif" />
+    <Content Include="Content\kendo\2015.3.1111\Bootstrap\loading-image.gif" />
+    <Content Include="Content\kendo\2015.3.1111\Bootstrap\loading.gif" />
+    <Content Include="Content\kendo\2015.3.1111\Bootstrap\loading_2x.gif" />
+    <Content Include="Content\kendo\2015.3.1111\Bootstrap\markers.png" />
+    <Content Include="Content\kendo\2015.3.1111\Bootstrap\markers_2x.png" />
+    <Content Include="Content\kendo\2015.3.1111\Bootstrap\slider-h.gif" />
+    <Content Include="Content\kendo\2015.3.1111\Bootstrap\slider-v.gif" />
+    <Content Include="Content\kendo\2015.3.1111\Bootstrap\sprite.png" />
+    <Content Include="Content\kendo\2015.3.1111\Bootstrap\sprite_2x.png" />
+    <Content Include="Content\kendo\2015.3.1111\Bootstrap\sprite_kpi.png" />
+    <Content Include="Content\kendo\2015.3.1111\Bootstrap\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2015.3.1111\Default\editor.png" />
+    <Content Include="Content\kendo\2015.3.1111\Default\imagebrowser.png" />
+    <Content Include="Content\kendo\2015.3.1111\Default\indeterminate.gif" />
+    <Content Include="Content\kendo\2015.3.1111\Default\loading-image.gif" />
+    <Content Include="Content\kendo\2015.3.1111\Default\loading.gif" />
+    <Content Include="Content\kendo\2015.3.1111\Default\loading_2x.gif" />
+    <Content Include="Content\kendo\2015.3.1111\Default\markers.png" />
+    <Content Include="Content\kendo\2015.3.1111\Default\markers_2x.png" />
+    <Content Include="Content\kendo\2015.3.1111\Default\slider-h.gif" />
+    <Content Include="Content\kendo\2015.3.1111\Default\slider-v.gif" />
+    <Content Include="Content\kendo\2015.3.1111\Default\sprite.png" />
+    <Content Include="Content\kendo\2015.3.1111\Default\sprite_2x.png" />
+    <Content Include="Content\kendo\2015.3.1111\Default\sprite_kpi.png" />
+    <Content Include="Content\kendo\2015.3.1111\Default\sprite_kpi_2x.png" />
+    <Content Include="Content\kendo\2015.3.1111\fonts\DejaVu\LICENSE.txt" />
+    <Content Include="Content\kendo\2015.3.1111\fonts\glyphs\KendoUIGlyphs.svg" />
+    <Content Include="Content\kendo\2015.3.1111\images\back.png" />
+    <Content Include="Content\kendo\2015.3.1111\images\kendoui.svg" />
+    <Content Include="Content\kendo\2015.3.1111\images\wp8_icons.png" />
+    <Content Include="Content\kendo\2015.3.1111\images\wp8_inverseicons.png" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.black.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.black.mobile.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.blueopal.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.blueopal.mobile.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.bootstrap.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.bootstrap.mobile.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.common-bootstrap.core.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.common-bootstrap.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.common-fiori.core.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.common-fiori.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.common-material.core.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.common-material.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.common-nova.core.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.common-nova.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.common-office365.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.common.core.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.common.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.dataviz.black.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.dataviz.blueopal.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.dataviz.bootstrap.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.dataviz.default.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.dataviz.fiori.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.dataviz.flat.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.dataviz.highcontrast.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.dataviz.material.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.dataviz.materialblack.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.dataviz.metro.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.dataviz.metroblack.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.dataviz.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.dataviz.mobile.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.dataviz.moonlight.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.dataviz.nova.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.dataviz.office365.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.dataviz.silver.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.dataviz.uniform.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.default.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.default.mobile.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.fiori.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.fiori.mobile.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.flat.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.flat.mobile.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.highcontrast.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.highcontrast.mobile.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.material.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.material.mobile.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.materialblack.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.materialblack.mobile.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.metro.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.metro.mobile.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.metroblack.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.metroblack.mobile.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.mobile.all.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.mobile.android.dark.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.mobile.android.light.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.mobile.blackberry.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.mobile.common.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.mobile.fiori.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.mobile.flat.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.mobile.ios.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.mobile.material.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.mobile.meego.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.mobile.nova.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.mobile.office365.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.mobile.wp8.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.moonlight.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.moonlight.mobile.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.nova.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.nova.mobile.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.office365.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.office365.mobile.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.rtl.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.rtl.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.silver.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.silver.mobile.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.uniform.min.css" />
+    <Content Include="Content\kendo\2015.3.1111\kendo.uniform.mobile.min.css" />
+    <Content Include="Content\ladda.min.css" />
+    <Content Include="Content\xslt\clientInfo.xslt" />
+    <Content Include="Content\xslt\clientError.xslt" />
+    <Content Include="Content\xslt\clientErrorWithLink.xslt" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\angular-animate.js" />
+    <Content Include="Scripts\angular-animate.min.js" />
+    <Content Include="Scripts\angular-chart.js" />
+    <Content Include="Scripts\angular-kendo.js" />
+    <Content Include="Scripts\angular-ui-router.js" />
+    <Content Include="Scripts\app\angular-local-storage.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\angular-file-saver.bundle.min.js" />
+    <Content Include="Scripts\app\controllers\spGridDemoController.js" />
+    <Content Include="Scripts\app\controllers\spGridDemoSearchController.js" />
+    <Content Include="Scripts\app\control\xlsUpload.html" />
+    <Content Include="Scripts\app\control\xlsUploadDirectives.js" />
+    <Content Include="Scripts\app\fileReader.js" />
+    <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\controllers\xlsUploadController.js" />
+    <Content Include="Scripts\app\control\spgridDirectives.js" />
+    <Content Include="Scripts\app\control\grid.html" />
+    <Content Include="Scripts\app\control\kendo.common.js" />
+    <Content Include="Scripts\app\control\kendo.upload.ext.js" />
+    <Content Include="Scripts\app\control\kendo.grid.ext.js" />
+    <Content Include="Scripts\app\appModule.js" />
+    <Content Include="Scripts\app\jszip.js" />
+    <Content Include="Scripts\app\services\spGridDemoDataSource.js" />
+    <Content Include="Scripts\app\services\spGridDemoModel.js" />
+    <Content Include="Scripts\app\services\roleLandingMapService.js" />
+    <Content Include="Scripts\app\xlsx.full.min.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.culture.en-US.js" />
+    <Content Include="Scripts\spin.js" />
+    <Content Include="Views\Home\browserNotSupported.html" />
+    <Content Include="Scripts\app\jquery.cookie.js" />
+    <Content Include="Scripts\app\jquery.xslt.js" />
+    <Content Include="Scripts\app\moment.min.js" />
+    <Content Include="Scripts\app\services\uiDefenceService.js" />
+    <Content Include="Scripts\app\services\AppStartupService.js" />
+    <Content Include="Scripts\app\services\MessageService.js" />
+    <Content Include="Scripts\app\xml2json.js" />
+    <Content Include="Scripts\app\xmlxlstTransformer.js" />
+    <Content Include="Scripts\app\xslt.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\kendo\2015.3.1111\fonts\DejaVu\DejaVuSans-Bold.ttf" />
+    <Content Include="Content\kendo\2015.3.1111\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
+    <Content Include="Content\kendo\2015.3.1111\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
+    <Content Include="Content\kendo\2015.3.1111\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
+    <Content Include="Content\kendo\2015.3.1111\fonts\DejaVu\DejaVuSans.ttf" />
+    <Content Include="Content\kendo\2015.3.1111\fonts\DejaVu\DejaVuSansMono-Bold.ttf" />
+    <Content Include="Content\kendo\2015.3.1111\fonts\DejaVu\DejaVuSansMono-BoldOblique.ttf" />
+    <Content Include="Content\kendo\2015.3.1111\fonts\DejaVu\DejaVuSansMono-Oblique.ttf" />
+    <Content Include="Content\kendo\2015.3.1111\fonts\DejaVu\DejaVuSansMono.ttf" />
+    <Content Include="Content\kendo\2015.3.1111\fonts\DejaVu\DejaVuSerif-Bold.ttf" />
+    <Content Include="Content\kendo\2015.3.1111\fonts\DejaVu\DejaVuSerif-BoldItalic.ttf" />
+    <Content Include="Content\kendo\2015.3.1111\fonts\DejaVu\DejaVuSerif-Italic.ttf" />
+    <Content Include="Content\kendo\2015.3.1111\fonts\DejaVu\DejaVuSerif.ttf" />
+    <Content Include="Content\kendo\2015.3.1111\fonts\glyphs\KendoUIGlyphs.eot" />
+    <Content Include="Content\kendo\2015.3.1111\fonts\glyphs\KendoUIGlyphs.ttf" />
+    <Content Include="Content\kendo\2015.3.1111\fonts\glyphs\KendoUIGlyphs.woff" />
+    <Content Include="Content\kendo\2015.3.1111\images\kendoui.ttf" />
+    <Content Include="Content\kendo\2015.3.1111\images\kendoui.woff" />
+    <None Include="Properties\PublishProfiles\Web_deploy.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js.map">
+      <DependentUpon>jquery-1.10.2.min.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\angular.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\jquery.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\jszip.min.js" />
+    <None Include="Scripts\kendo\2015.3.1111\kendo.all-vsdoc.js" />
+    <None Include="Scripts\kendo\2015.3.1111\kendo.all.min.intellisense.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.all.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.all_original.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.angular.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.angular2.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.aspnetmvc.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.autocomplete.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.binder.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.button.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.calendar.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.color.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.colorpicker.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.columnmenu.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.columnsorter.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.combobox.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.core.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.data.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.data.odata.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.data.signalr.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.data.xml.min.js" />
+    <None Include="Scripts\kendo\2015.3.1111\kendo.dataviz-vsdoc.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.dataviz.barcode.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.dataviz.chart.funnel.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.dataviz.chart.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.dataviz.chart.polar.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.dataviz.core.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.dataviz.diagram.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.dataviz.gauge.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.dataviz.map.min.js" />
+    <None Include="Scripts\kendo\2015.3.1111\kendo.dataviz.min.intellisense.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.dataviz.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.dataviz.mobile.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.dataviz.qrcode.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.dataviz.sparkline.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.dataviz.stock.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.dataviz.themes.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.dataviz.treemap.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.datepicker.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.datetimepicker.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.dom.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.draganddrop.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.drawing.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.dropdownlist.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.editable.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.editor.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.excel.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.filebrowser.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.filtercell.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.filtermenu.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.fx.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.gantt.list.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.gantt.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.gantt.timeline.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.grid.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.groupable.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.imagebrowser.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.list.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.listview.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.maskedtextbox.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.menu.min.js" />
+    <None Include="Scripts\kendo\2015.3.1111\kendo.mobile-vsdoc.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.actionsheet.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.application.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.button.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.buttongroup.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.collapsible.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.drawer.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.listview.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.loader.min.js" />
+    <None Include="Scripts\kendo\2015.3.1111\kendo.mobile.min.intellisense.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.modalview.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.navbar.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.pane.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.popover.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.scroller.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.scrollview.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.shim.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.splitview.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.switch.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.tabstrip.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.mobile.view.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.multiselect.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.notification.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.numerictextbox.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.ooxml.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.pager.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.panelbar.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.pdf.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.pivot.configurator.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.pivot.fieldmenu.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.pivotgrid.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.popup.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.progressbar.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.reorderable.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.resizable.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.responsivepanel.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.router.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.scheduler.agendaview.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.scheduler.dayview.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.scheduler.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.scheduler.monthview.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.scheduler.recurrence.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.scheduler.timelineview.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.scheduler.view.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.selectable.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.slider.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.sortable.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.splitter.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.spreadsheet.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.tabstrip.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.timepicker.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.timezones.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.toolbar.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.tooltip.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.touch.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.treelist.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.treeview.draganddrop.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.treeview.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.upload.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.userevents.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.validator.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.view.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.virtuallist.min.js" />
+    <None Include="Scripts\kendo\2015.3.1111\kendo.web-vsdoc.js" />
+    <None Include="Scripts\kendo\2015.3.1111\kendo.web.min.intellisense.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.web.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.webcomponents.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\kendo.window.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.bg-BG.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.cs-CZ.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.da-DK.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.de-CH.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.de-DE.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.en-US.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.es-ES.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.fr-CH.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.fr-FR.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.he-IL.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.it-CH.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.it-IT.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.ja-JP.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.nb-NO.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.nl-NL.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.pl-PL.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.pt-BR.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.pt-PT.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.ro-RO.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.ru-RU.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.sk-SK.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.sv-SE.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.tr-TR.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.uk-UA.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.zh-CN.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.zh-HK.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\messages\kendo.messages.zh-TW.min.js" />
+    <Content Include="Scripts\kendo\2015.3.1111\pako_deflate.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\spGridDemo\add.html" />
+    <Content Include="Views\spGridDemo\edit.html" />
+    <Content Include="Views\spGridDemo\index.html" />
+    <Content Include="Views\spGridDemo\search.html" />
+    <Content Include="Views\Upload\xlsUpload.html" />
+    <Content Include="Views\styleGuideSample.html" />
+    <None Include="Web.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\header.cshtml" />
+    <Content Include="Views\Shared\include.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62693</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:6100</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <UsingTask TaskName="TransformXml" AssemblyFile="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Web\Microsoft.Web.Publishing.Tasks.dll" />
+  <Target Name="AfterBuild" Condition="Exists('Web.$(Configuration).config')">
+    <!--Generate transformed config in the output directory-->
+    <TransformXml Source="Web.config" Destination="$(OutputPath)Web.config" Transform="Web.$(Configuration).config" />
+  </Target>
+  <Target Name="AfterBuild" Condition="Exists('WCFClient.$(Configuration).config')">
+    <!--Generate transformed config in the output directory-->
+    <TransformXml Source="WCFClient.config" Destination="$(OutputPath)WCFClient.config" Transform="WCFClient.$(Configuration).config" />
+  </Target>
+</Project>

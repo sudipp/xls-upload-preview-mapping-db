@@ -1,0 +1,151 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    .half {
+        height:40vh;
+        background-color: red;
+        display: block;
+    }
+    .panel-heading {
+        color: #333;
+        background-color: #d6e3e7;
+        font-weight: bold;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+    .panel-heading-download-icon {        
+        text-align: center;
+    }
+    td {
+        vertical-align: top;
+    }
+</style>
+
+<table style="height:80vh; width: 100%; ">
+    <tr>
+        <td width="20%" class="pdf-doughnut-content-wrapper">
+            <div class="panel-heading">
+                VIN Status
+                <a href="" title="Download Chart">
+                    <div ng-click="onPdfDoughnut($event,'.pdf-doughnut-content-wrapper')" class="mnu-glyphicon glyphicon glyphicon-cloud-download" style="padding: 0 8px; font-size: 18px; float: right;" ></div>
+                </a>
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="text-align: center;">
+                    Campaign : <select scrm-master-list
+                                       kendo-drop-down-list="eqMasterList"
+                                       id="CampaignDoughnutDDL"
+                                       k-options="CampaignDoughnutDDL" name="CampaignDoughnutDDL"
+                                       style="width: 100px;"></select>
+                    <button class="k-button" id="btnChangeDoughnut" ng-click="onChangeDoughnut($event)" ladda-button="laddaLoading2" data-spinner-color="#696969">&nbsp;&nbsp;Go&nbsp;&nbsp;</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <canvas id="doughnut" class="chart chart-doughnut"
+                            chart-data="doughnutdata" chart-labels="doughnutlabels" chart-colors="doughnutcolors" chart-dataset-override="doughnutdatasetOverride"></canvas>
+                </div>
+            </div>
+
+        </td>
+        <td width="20%" class="pdf-barchart-content-wrapper">
+            <div class="panel-heading">
+                Campaign Outreach Status
+                
+                <a href="" title="Download Chart">
+                    <span ng-click="onPdfDoughnut($event,'.pdf-barchart-content-wrapper')" class="mnu-glyphicon glyphicon glyphicon-cloud-download" style="padding: 0 8px; font-size: 18px;float: right;"></span>
+                </a>
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="text-align: center;">
+                    Campaign : <select scrm-master-list
+                                       kendo-drop-down-list="eqMasterList"
+                                       id="CampaignBarchartDDL"
+                                       k-options="CampaignBarchartDDL" name="CampaignBarchartDDL"
+                                       style="width: 100px;"></select>
+                    <button class="k-button" id="btnChangeBarchart" ng-click="onChangeBarchart($event)" ladda-button="laddaLoading4" data-spinner-color="#696969">&nbsp;&nbsp;Go&nbsp;&nbsp;</button>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <canvas id="barchart" class="chart chart-bar"
+                            chart-data="barchartdata" chart-labels="barchartlabels" chart-series="barchartseries"></canvas>
+                </div>
+            </div>
+        </td>
+        <td rowspan="2" width="60%" class="pdf-chartline-content-wrapper">
+            <div class="panel-heading">
+                Campaign Status by Date Range
+                <a href="" title="Download Chart">
+                    <span ng-click="onPdfDoughnut($event,'.pdf-chartline-content-wrapper')" class="mnu-glyphicon glyphicon glyphicon-cloud-download" style="padding: 0 8px; font-size: 18px;float: right;"></span>
+                </a>
+            </div>
+            <div class="row" id="divvin">
+                <div class="col-md-12" style="text-align: center;">
+                    Campaign : <select scrm-master-list
+                                        kendo-drop-down-list="eqMasterList"
+                                        id="CampaignChartLineDDL"
+                                        k-options="CampaignChartLineDDL" name="CampaignChartLineDDL"
+                                        style="width: 90px;"></select>
+
+                    Completion Date<input type="checkbox" id="Completion_Ts" ng-change="changeDateTypeSelection($event)"
+                                            ng-model="ChartLineCompletionDate" />
+
+                    HM Fiscal Month<input type="checkbox" id="HMFiscalMonth_Ts" ng-change="changeDateTypeSelection($event)"
+                                            ng-model="HMFiscalDate" />
+
+
+                    From Date: <input kendo-date-picker id="ChartLineFromDate"
+                                        ng-model="ChartLineFromDate"
+                                        k-ng-model="ChartLineFromDate" style="width: 90px;" />
+                    To Date: <input kendo-date-picker id="ChartLineToDate"
+                                    ng-model="ChartLineToDate"
+                                    k-ng-model="ChartLineToDate" style="width: 90px;" />
+                    <button class="k-button" id="btnChangeChartLine" ng-click="onChangeChartLine($event)" ladda-button="laddaLoading3" data-spinner-color="#696969">&nbsp;&nbsp;Go&nbsp;&nbsp;</button>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <canvas id="line" class="chart chart-line" chart-data="Linedata"
+                            chart-labels="Linelabels" chart-series="Lineseries" chart-options="Lineoptions"
+                            chart-dataset-override="LinedatasetOverride" chart-colors="doughnutAlphacolors"></canvas>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="pdf-alpha-doughnut-content-wrapper">
+            <div class="panel-heading">
+                Alpha VIN Status
+                <a href="" title="Download Chart">
+                    <span ng-click="onPdfDoughnut($event,'.pdf-alpha-doughnut-content-wrapper')" class="mnu-glyphicon glyphicon glyphicon-cloud-download" style="padding: 0 8px; font-size: 18px;float: right;"></span>
+                </a>
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="text-align: center;">
+                    Campaign : <select scrm-master-list
+                                       kendo-drop-down-list="eqMasterList"
+                                       id="CampaignAlphaDoughnutDDL"
+                                       k-options="CampaignAlphaDoughnutDDL" name="CampaignAlphaDoughnutDDL"
+                                       style="width: 100px;"></select>
+                    <button class="k-button" id="btnChangeDoughnutAlpha" ng-click="onChangeDoughnutAlpha($event)" ladda-button="laddaLoading1" data-spinner-color="#696969">&nbsp;&nbsp;Go&nbsp;&nbsp;</button>                    
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <canvas id="doughnutAlpha" class="chart chart-doughnut"
+                            chart-data="doughnutAlphadata" chart-labels="doughnutAlphalabels" chart-colors="doughnutAlphacolors"></canvas>
+                </div>
+            </div>
+
+        </td>
+        <td></td>
+    </tr>
+</table>

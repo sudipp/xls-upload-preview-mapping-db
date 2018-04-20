@@ -1,0 +1,81 @@
+﻿<div class="navbar navbar-default navbar-fixed-top" id="spNavPanel">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="navbar-brand">
+                <a ui-sref="home">
+                    <h2>Your logo</h2>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4" ng-if="startup.uiDef().usr().v" ng-cloak>
+            <div class="nav navbar-nav navbar-right">
+                <a ui-sref="home" ng-if="startup.uiDef().usr().hm.v">
+                    <span class="glyphicon glyphicon-home"></span>
+                </a>
+                <span class="spacer" ng-if="startup.uiDef().usr().v && startup.uiDef().usr().hm.v"></span>
+                <span class="glyphicon glyphicon-user" ng-if="startup.uiDef().usr().info.v"></span>
+                <div class="btn-group" ng-if="startup.uiDef().usr().info.v">
+                    <span ng-class="startup.settings.usrInfoCss" data-toggle="dropdown" href="#" title="{{startup.uiDef().avlBkRles().length > 0 ? 'Click to Switch User' : ''}}">{{ startup.loginUserId() !=startup.crntUserId() ? " Backing up - " : ""}}{{startup.crntRole()}}, {{startup.crntUserId()}}</span>
+                    <ul class="dropdown-menu dropdown-sys-menu" ng-if="startup.uiDef().usr().info.swchRle.v && startup.uiDef().avlBkRles().length > 0">
+
+                        <div style="max-height:250px; overflow-y: scroll; width: 280px;">
+                            <li ng-show="startup.loginUserId() !=startup.crntUserId()">
+                                <a style="cursor: pointer;" ng-click="swch2Bk(startup.loginRole(),startup.scndryRole(),startup.loginUserId());">Switch back to {{startup.loginRole()}}, {{startup.loginUserId()}}</a>
+                            </li>
+                            <li ng-show="bkRole.usrNm !=startup.crntUserId()" ng-repeat="bkRole in startup.uiDef().avlBkRles()">
+                                <a style="cursor: pointer;" ng-click="swch2Bk(bkRole.role,startup.scndryRole(), bkRole.usrNm);">Backup {{bkRole.role}}, {{bkRole.usrNm}}</a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row sysinfo-pane">
+        <div class="col-md-8">
+            <div id="sys-message" class="sys-message">
+                <span class="k-icon k-i-note" style="float: left;position:absolute;"></span>
+                <div class="k-errormessage">
+                    message panel
+                </div>
+            </div>
+            <div id="sys-message-expanded" class="sys-message-expanded">
+                <span class="k-icon k-i-note" style="float: left;position:absolute;"></span>
+                <div class="k-errormessage">
+                    message panel expanded
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 pull-right" ng-cloak>
+            <div class="navbar-right sys-menu">
+                <div class="k-menuBoxDiv">
+                    <div class="btn" aria-label="Left Align" data-toggle="dropdown" title="Upload Menu" style="background-color: Transparent; margin-top: 0 !important; padding: 0 8px 0 0 !important; vertical-align: top; font-size: 18px; border-radius: 0; display: inline;">
+                        <span class="glyphicon glyphicon-upload"></span>
+                    </div>
+                    <ul class="dropdown-menu dropdown-sys-menu">
+                        <li ng-class="{disabled: startup.isAnyJobPendingCommitOrRollback}">
+                            <a ui-sref="xlsupload" title="Sample XLS File Upload" ng-style="{'cursor':'pointer'}">Sample XLS File Upload</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .btn:hover, .btn:focus, .mnu-glyphicon:hover, mnu-glyphicon:focus{
+        color:#e2373f ;
+     }
+    .mnu-glyphicon {
+        color:#0f2930;
+    }
+    
+    .disabled { /*this is for diabling menu*/
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+</style>

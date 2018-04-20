@@ -1,0 +1,20 @@
+﻿@{
+    //true to include js lib else load css lib
+    var includeJsLib = (this.PageData.Count > 0) && ((bool)this.PageData[0]); 
+}
+@if (includeJsLib) //include js
+{
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/app")
+    @Scripts.Render("~/bundles/appframework")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/kendo")
+}
+else //include css
+{
+    @Styles.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/kendo")
+    @Styles.Render("~/Content/app")
+    @Scripts.Render("~/bundles/modernizr")
+}

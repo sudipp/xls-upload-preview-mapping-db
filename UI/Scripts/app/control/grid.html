@@ -1,0 +1,48 @@
+﻿<div ng-if="showGrid">
+
+    <div ng-show="showGridSerach" id="gridSerachPanel_{{gridId}}">
+        <div role="alert" ng-hide="gridToolbarOptions.search.show" class="alert alert-search alert-dismissible animate-hide">
+            <button type="button" class="close" aria-label="Close" ng-click="closeSearch(event);"><span aria-hidden="true">&times;</span></button>
+            <div id="search_panel_{{gridId}}" ng-if="!gridToolbarOptions.search.show" ng-include='gridToolbarOptions.search.templateFile'></div>
+        </div>
+    </div>
+    <div class="row gridHeader"
+         ng-if="gridToolbarOptions.gridHeaderText !='' || gridToolbarOptions.showExportOnCRUD || ridToolbarOptions.showGridFiltersummary || showGridSerach">
+        <div class="col-md-12">
+            <div id="gridLabelHolder_{{gridId}}">
+                <label class="gridLabel grid-header-label-text">{{gridToolbarOptions.gridHeaderText}}</label>
+            </div>
+            <div ng-show="gridToolbarOptions.search.show">
+                <div class="separator">|</div>
+                <div title="Search" class="search" ng-click="openSearch(event);"></div>
+            </div>
+            <div ng-show="gridToolbarOptions.showGridFiltersummary || gridToolbarOptions.search.show">
+                <div class="separator">|</div>
+                <span id="eqggridtooltip_{{gridid}}" kendo-tooltip="eqgGridTooltip" k-options="gridtoolbarFilterDisplayOptions" class="k-group">
+                    <span class="allrec-grid-tooltip" ng-bind-html="toolbarFilterDisplayText"></span>
+                </span>
+            </div>
+
+
+            <div class="pull-right-grid" ng-show="gridToolbarOptions.showExportOnCRUD">
+                <div title="Export to Excel" class="exportXls" ng-click="exportGridData()"></div>
+            </div>
+            <div class="pull-right-grid separator" ng-show="gridToolbarOptions.showClearGridFilter && gridToolbarOptions.showExportOnCRUD">|</div>
+            <div class="pull-right-grid" ng-show="gridToolbarOptions.showClearGridFilter">
+                <div title="Clear all Filters" class="k-menubar k-ResetFilter" ng-click="clearGridFilter()"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div id="eqg_{{gridId}}" kendo-grid="eqgGrid" k-options="gridOptions" k-pageable="gridPagable"></div>-->
+    <div id="eqg_{{gridId}}" kendo-grid="eqgGrid" k-options="gridOptions" style="height:450px"></div>
+
+    <div id="eqgeditform_{{gridId}}">
+
+    </div>
+
+    <div id="popup_window_{{gridId}}" kendo-window="eqgGridPopup" k-title="'AJAX content'"
+         k-width="600" k-height="200" k-visible="false" k-modal="true" k-resizable="false">
+    </div>
+
+</div>
